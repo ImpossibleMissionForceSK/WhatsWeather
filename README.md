@@ -1,0 +1,2 @@
+# WhatsWeather
+A weather application
