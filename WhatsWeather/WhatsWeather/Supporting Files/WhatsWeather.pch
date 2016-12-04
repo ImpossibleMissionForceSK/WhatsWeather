@@ -1,0 +1,36 @@
+//
+//  WhatsWeather.pch
+//  WhatsWeather
+//
+//  Created by Ryan on 2016/12/3.
+//  Copyright © 2016年 HelloRyan. All rights reserved.
+//
+
+#ifndef WhatsWeather_pch
+#define WhatsWeather_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+// —————————————————————————获取设备信息————————————————————————————————————//
+// 获取当前设备的屏幕尺寸（不随设备旋转改变）
+#define kScreenWidth     MIN([UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.height)  // 宽度
+#define kScreenHeight    MAX([UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.height)  // 高度
+
+// 获取当前设备的系统版本
+#define kSystemVersion     [[UIDevice currentDevice].systemVersion floatValue]
+
+
+// ————————————————————————weakSelf、RGB宏定义—————————————————————————————————//
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+#define kRGBColor(r, g, b, a)  [UIColor colorWithRed:(r) / 255.0 green:(g) / 255.0 blue:(b) / 255.0 alpha: a]
+
+
+// —————————————————————————————第三方框架导入——————————————————————————//
+
+#import "UIView+ViewController.h"           // 获取视图所在的视图控制器
+#import "Masonry.h"                         // 轻量级布局框架"
+#import "AFNetworking.h"                    // 网络框架
+#import "MBProgressHUD.h"                   // 加载提示视图
+
+#endif /* WhatsWeather_pch */
